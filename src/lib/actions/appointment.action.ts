@@ -46,9 +46,15 @@ export const getRecentAppointmentList = async () => {
     const appointments = await databases.listDocuments(
       DATABASE_ID!,
       APPOINTMENT_COLLECTION_ID!,
-      [Query.orderDesc( '$createdAt')],
-      
+      [Query.orderAsc( '$createdAt')],
+     
     );
+    if(appointments.documents.length > 0) { 
+      appointments.documents.reverse();
+    }
+      // reverse a array be orderDesc not giving the actual documents lenght
+
+
     let initialCounts = {
       scheduledCount: 0,
       pendingCount: 0,

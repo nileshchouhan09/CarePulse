@@ -13,8 +13,11 @@ const fontSans = Plus_Jakarta_Sans({ subsets: ["latin"],
  });
 
 export const metadata: Metadata = {
-  title: "Care Plus",
+  title: "Care Pulse",
   description: "A health care management system",
+  icons:{
+    icon:"/assets/icons/logo-icon.svg"
+  }
 };
 
 export default function RootLayout({
